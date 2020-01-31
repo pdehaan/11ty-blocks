@@ -1,0 +1,10 @@
+{% extends "./default.njk" %}
+
+{% block content %}
+{% endblock %}
+
+{% block sidebar %}
+  {% include "post-sidebar.njk" | trim %}
+  <hr />
+  {{ super() }}
+{% endblock %}

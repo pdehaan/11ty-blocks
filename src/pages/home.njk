@@ -1,0 +1,16 @@
+---
+title: Homepage
+---
+
+{% extends $layout %}
+
+{% block content %}
+  <p>This is the Homepage.</p>
+  <p>It pulls sidebar content from the {{ page.inputPath }} file, as well as inheriting the _includes/page-sidebar.njk sidebar contents, which inherits from the _includes/defeault-sidebar.njk file.</p>
+{% endblock %}
+
+{% block sidebar %}
+  <p>This is from {{ page.inputPath | url | dump }}</p>
+  <hr />
+  {{ super() }}
+{% endblock %}

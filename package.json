@@ -1,0 +1,41 @@
+{
+  "name": "11ty-blocks",
+  "description": "Experimenting with Eleventy+Nunjucks blocks for layout",
+  "version": "1.0.0",
+  "author": "Peter deHaan",
+  "bugs": {
+    "url": "https://github.com/pdehaan/11ty-blocks/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "eslint": "^6.8.0",
+    "htmllint": "^0.8.0",
+    "prettier": "^1.19.1"
+  },
+  "dir": {
+    "data": "_data",
+    "includes": "_includes",
+    "input": "src",
+    "layouts": "_includes/layouts",
+    "output": "dist"
+  },
+  "homepage": "https://github.com/pdehaan/11ty-blocks#readme",
+  "keywords": ["11ty", "eleventy", "blocks"],
+  "license": "MPL-2.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdehaan/11ty-blocks.git"
+  },
+  "scripts": {
+    "build": "eleventy build --config=src/_11ty/config.js",
+    "format": "npm run format:src",
+    "format:dist": "prettier dist/**/*.html --write",
+    "format:src": "prettier *.js .*.js src/**/*.{js,json} --write",
+    "lint": "eslint .",
+    "postbuild": "npm run format:dist",
+    "postlint": "npm run format:src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

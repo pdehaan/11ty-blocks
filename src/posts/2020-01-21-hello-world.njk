@@ -1,0 +1,11 @@
+---
+title: Hello World
+---
+
+{% extends $layout %}
+
+{% block content %}
+  <p>This is the "Hello World" post page</p>
+  <p>This is a blog post instead of a "page", so it uses a post specific sidebar include, _includes/post-sidebar.njk (vs page-sidebar.njk, like the other templates). It also inherits sidebar content from the global _includes/default-sidebar.njk.</p>
+  <p>The {{ page.inputPath }} has no sidebar block, so no page-specific sidebar content appears.</p>
+{% endblock %}

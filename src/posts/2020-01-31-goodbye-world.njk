@@ -1,0 +1,20 @@
+---
+title: Goodbye World
+---
+
+{% extends $layout %}
+
+{% block content %}
+  <p>This is the "Goodbye World" post page</p>
+  <p>The sidebar on this page is empty, because the <code>{% raw %}{% block sidebar %}...{% endblock %}{% endraw %}</code> block is empty. If the sidebar block was <em>missing</em>, the default sidebar would appear (like in the Hello World post).</p>
+  <p>If you only wanted the post-specific sidebar (or global sidebar) to appear, you could do something like the following in {{ page.inputPath | url }}:</p>
+  <pre><code>{% raw %}
+  {% block sidebar %}
+    {% include "post-sidebar.njk" %}
+  {% endblock %}
+  {% endraw %}</code></pre>
+{% endblock %}
+
+{% block sidebar %}
+  {# {% include "post-sidebar.njk" %} #}
+{% endblock %}

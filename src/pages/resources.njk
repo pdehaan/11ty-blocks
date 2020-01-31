@@ -1,0 +1,12 @@
+---
+title: Resources
+---
+
+{% extends $layout %}
+
+{% block content %}
+ <p>This is the Resources page.</p>
+ <p>This page inherits both the _includes/page-sidebar.njk and _includes/default-sidebar.njk files.</p>
+ <p>There is no page specific sidebar content (no <code>{%raw%}{% block sidebar %}...{% endblock %}{% endraw %}</code> in the {{ page.inputPath }} file).</p>
+{% endblock %}
+

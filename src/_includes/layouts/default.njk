@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{ title or metadata.title }}</title>
+  <meta name="description" value="{{ metadata.description }}" />
+  <style>
+    .container {
+      display: grid;
+
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "content sidebar"
+        "footer footer";
+
+      grid-template-columns: 1fr 300px;
+      grid-template-rows: auto auto 1fr auto;
+      grid-gap: 2px;
+      height: 99vh;
+    }
+
+    .container > * {
+      padding: 0.5rem;
+    }
+
+    .container > header {
+      grid-area: header;
+      background-color: red;
+    }
+
+    .container > nav {
+      grid-area: nav;
+      background-color: orange;
+    }
+
+    .container > main {
+      grid-area: content;
+      background-color: yellow;
+    }
+
+    .container > aside {
+      grid-area: sidebar;
+      background-color: lightgreen;
+    }
+
+    .container > footer {
+      grid-area: footer;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>11ty-blocks example</h1>
+  </header>
+
+  <nav>
+    {% for item in nav %}
+      <a href="{{ item.href | url }}">{{ item.label }}</a>
+    {% endfor %}
+    {# <a href="/pages/home/">Home</a>
+    <a href="/pages/resources/">Resources</a>
+    <a href="/pages/about/">About Me</a>
+    <a href="/posts/2020-01-21-hello-world/">Hello World</a> #}
+  </nav>
+
+  <main>
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    {% block content %}{% endblock %}
+  </main>
+
+  <aside>
+    {% block sidebar %}
+      {%- include "default-sidebar.njk" -%}
+    {% endblock %}
+  </aside>
+
+  <footer>
+    <p>&copy; @pdehaan</p>
+  </footer>
+</div>
+
+</body>
+</html>
